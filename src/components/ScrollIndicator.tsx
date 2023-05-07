@@ -1,10 +1,4 @@
-import {
-  Variants,
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { GiAbstract038 } from "react-icons/gi";
 
 export const ScrollIndicator = () => {
@@ -56,7 +50,7 @@ export const ScrollIndicator = () => {
           right: "10rem",
           bottom: "4rem",
           userSelect: "none",
-          zIndex: 99,
+          zIndex: 10,
         }}>
         (scroll)
       </motion.div>
@@ -74,7 +68,7 @@ export const ScrollIndicator = () => {
           left: "10rem",
           bottom: "4rem",
           userSelect: "none",
-          zIndex: 99,
+          zIndex: 10,
         }}>
         <GiAbstract038 size={"1.5rem"} />
       </motion.div>
