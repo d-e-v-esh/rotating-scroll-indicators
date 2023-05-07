@@ -10,20 +10,6 @@ import { GiAbstract038 } from "react-icons/gi";
 export const ScrollIndicator = () => {
   const { scrollY } = useScroll();
 
-  const scrollIndicatorVariant: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-
-      transition: {
-        type: "spring",
-        ease: "easeInOut",
-        duration: 1,
-      },
-    },
-  };
-
   const transformedScrollYLeft = useTransform(
     scrollY,
     [0, 100000],
@@ -63,7 +49,6 @@ export const ScrollIndicator = () => {
         animate="show"
         exit="hidden"
         className="scrollIndicatorRight"
-        variants={scrollIndicatorVariant}
         style={{
           rotate: rotationLeft,
           position: "fixed",
@@ -81,7 +66,6 @@ export const ScrollIndicator = () => {
         animate="show"
         exit="hidden"
         className="scrollIndicatorLeft"
-        variants={scrollIndicatorVariant}
         style={{
           rotate: rotationRight,
           position: "fixed",
