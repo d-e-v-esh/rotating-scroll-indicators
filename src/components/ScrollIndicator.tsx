@@ -4,34 +4,25 @@ import { GiAbstract038 } from "react-icons/gi";
 export const ScrollIndicator = () => {
   const { scrollY } = useScroll();
 
-  const transformedScrollYLeft = useTransform(
-    scrollY,
-    [0, 100000],
-    [0, -30000]
-  );
-  const transformedScrollYRight = useTransform(
-    scrollY,
-    [0, 100000],
-    [0, 30000]
-  );
+  const transformedScrollYLeft = useTransform(scrollY, [0, 100], [0, -30], {
+    clamp: false,
+  });
+  const transformedScrollYRight = useTransform(scrollY, [0, 100], [0, 30], {
+    clamp: false,
+  });
 
-  const rotationLeft = useSpring(transformedScrollYLeft, {
+  const springPhysics = {
     damping: 22,
     mass: 0.1,
     stiffness: 200,
     bounce: 0.5,
     duration: 0.4,
     velocity: 100,
-  });
+  };
 
-  const rotationRight = useSpring(transformedScrollYRight, {
-    damping: 22,
-    mass: 0.1,
-    stiffness: 200,
-    bounce: 0.5,
-    duration: 0.4,
-    velocity: 100,
-  });
+  const rotationLeft = useSpring(transformedScrollYLeft, springPhysics);
+
+  const rotationRight = useSpring(transformedScrollYRight, springPhysics);
 
   return (
     <div
