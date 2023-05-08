@@ -1,5 +1,5 @@
 import MomentumScroll from "@/components/MomentumScroll";
-import { ScrollIndicator } from "@/components/ScrollIndicator";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 

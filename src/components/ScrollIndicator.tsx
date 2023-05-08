@@ -1,7 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { GiAbstract038 } from "react-icons/gi";
 
-export const ScrollIndicator = () => {
+const ScrollIndicator = () => {
   const { scrollY } = useScroll();
 
   const transformedScrollYLeft = useTransform(scrollY, [0, 100], [0, -30], {
@@ -66,3 +66,5 @@ export const ScrollIndicator = () => {
     </div>
   );
 };
+
+export default ScrollIndicator;
